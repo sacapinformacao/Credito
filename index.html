@@ -16,6 +16,8 @@
         --text-color: #333;
         --highlight-color: #0056b3;
         --orange-border: #FF8C00;
+        --card-text-color: #666; /* Definindo a cor do texto do card para reuso */
+        --card-title-color: #000; /* Cor preta para o título do card */
     }
 
     * {
@@ -327,16 +329,16 @@
     
     /* Conteúdo da página */
     .hero {
-        background-color: var(--light-blue);
         padding: 80px 20px;
         text-align: center;
-        color: var(--dark-blue);
     }
 
     .hero h1 {
         font-size: 2.8em;
         font-weight: 700;
         margin: 0;
+        /* NOVO: Cor do h1 igual ao h2 */
+        color: var(--dark-blue); 
     }
 
     .hero p {
@@ -351,7 +353,6 @@
         margin-top: 20px;
         border-radius: 8px;
         box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        background-color: white;
     }
     
     .section h2 {
@@ -360,6 +361,13 @@
         font-size: 2.2em;
         margin-bottom: 30px;
     }
+    
+    /* Estilo para o H2 da seção azul escura */
+    .section.dark-blue-bg h2 {
+        color: white !important; /* Mudar para branco */
+        font-weight: 700; /* Mudar para negrito */
+    }
+
 
     /* Cards */
     .service-grid, .sector-grid {
@@ -388,14 +396,15 @@
     }
 
     .card h3 {
-        color: var(--medium-blue);
+        color: var(--card-title-color); /* Cor preta */
         font-size: 1.5em;
         margin-top: 0;
+        font-weight: 700; /* Garantir negrito */
     }
 
     .card p {
         font-size: 1em;
-        color: #666;
+        color: var(--card-text-color); /* Cor do texto do card */
     }
 
     .cta-button {
@@ -416,7 +425,6 @@
     }
 
     .clients-section {
-        background-color: var(--light-blue);
         text-align: center;
         overflow: hidden;
     }
@@ -602,23 +610,21 @@
             <img src="https://raw.githubusercontent.com/sacapinformacao/clientes/36d5eab5b6cf22741d66c95eae5857a60141dee2/logo%20novo%20branco%20copiar.png" alt="AP Informação Logo">
         </a>
     </div>
-    <!-- NOVO: Adicionado input e label para o menu mobile -->
     <input type="checkbox" id="menu-toggle">
     <label for="menu-toggle" class="menu-icon">&#9776;</label>
-    <!-- FIM NOVO -->
     <nav class="header-nav">
         <ul>
             <li>
                 <span>Serviços</span>
                 <ul class="dropdown-menu">
-                    <li><a href="https://sacapinformacao.github.io/BackGroundCheck/">Background Check</a></li>
-                    <li><a href="https://sacapinformacao.github.io/Veiculos/">Análise de Veículos</a></li>
-                    <li><a href="https://sacapinformacao.github.io/Enriquecimento/">Enriquecimento de Dados</a></li>
-                    <li><a href="https://sacapinformacao.github.io/Compliance/">Compliance e LGPD</a></li>
                     <li><a href="https://sacapinformacao.github.io/Cadastral/">Validação Cadastral</a></li>
+                    <li><a href="https://sacapinformacao.github.io/Enriquecimento/">Enriquecimento de Dados</a></li>
                     <li><a href="https://sacapinformacao.github.io/Credito/">Análise de Crédito</a></li>
+                    <li><a href="https://sacapinformacao.github.io/BackGroundCheck/">Background Check</a></li>
                     <li><a href="https://sacapinformacao.github.io/checagem-pre-processual/">Checagem Pré-processual</a></li>
                     <li><a href="https://sacapinformacao.github.io/devedores-e-reus/">Localização de Devedores e Réus</a></li>
+                    <li><a href="https://sacapinformacao.github.io/Veiculos/">Análise de Veículos</a></li>
+                    <li><a href="https://sacapinformacao.github.io/Compliance/">Compliance e LGPD</a></li>
                 </ul>
             </li>
             <li>
@@ -650,7 +656,7 @@
   </header>
 
     <main>
-        <section class="hero">
+        <section class="hero" style="background-color: white; color: #666;"> 
             <div class="container">
                 <h1>Análise de Crédito: Tomada de Decisão Segura e Eficaz</h1>
                 <p>Nossa solução oferece uma visão completa e atualizada do histórico de crédito de pessoas e empresas, permitindo que você avalie riscos, identifique inadimplência e feche negócios de forma segura e estratégica.</p>
@@ -682,7 +688,7 @@
             </div>
         </section>
 
-        <section class="section" style="background-color: var(--light-blue);">
+        <section class="section" style="background-color: white;"> 
             <div class="container" style="text-align: center;">
                 <h2>Análise de Crédito é Essencial Para:</h2>
                 <div class="sector-grid">
@@ -702,9 +708,9 @@
             </div>
         </section>
         
-        <section class="section" style="background-color: var(--medium-blue); color: white; text-align: center;">
+        <section class="section dark-blue-bg" style="background-color: var(--medium-blue); color: white; text-align: center;">
             <div class="container">
-                <h2>Tome Decisões Financeiras com Confiança.</h2>
+                <h2>Tome Decisões Financeiras com Confiança.</h2> 
                 <p>Nossa solução é a chave para a segurança e sucesso de suas operações de crédito. Conte com a expertise da APinformação para proteger o seu negócio.</p>
                 <a href="https://api.whatsapp.com/send?phone=5511948962888&text=Olá!%20Acessei%20a%20página%20de%20Análise%20de%20Crédito%20e%20quero%20proteger%20minhas%20operações." class="cta-button" style="background-color: white; color: var(--medium-blue);">Fale com a APinformação</a>
             </div>
@@ -732,14 +738,14 @@
         <div class="footer-column">
             <h3>Serviços</h3>
             <ul>
-                <li><a href="https://sacapinformacao.github.io/BackGroundCheck/">Background Check</a></li>
-                <li><a href="https://sacapinformacao.github.io/Veiculos/">Análise de Veículos</a></li>
-                <li><a href="https://sacapinformacao.github.io/Enriquecimento/">Enriquecimento de Dados</a></li>
-                <li><a href="https://sacapinformacao.github.io/Compliance/">Compliance e LGPD</a></li>
                 <li><a href="https://sacapinformacao.github.io/Cadastral/">Validação Cadastral</a></li>
+                <li><a href="https://sacapinformacao.github.io/Enriquecimento/">Enriquecimento de Dados</a></li>
                 <li><a href="https://sacapinformacao.github.io/Credito/">Análise de Crédito</a></li>
+                <li><a href="https://sacapinformacao.github.io/BackGroundCheck/">Background Check</a></li>
                 <li><a href="https://sacapinformacao.github.io/checagem-pre-processual/">Checagem Pré-processual</a></li>
                 <li><a href="https://sacapinformacao.github.io/devedores-e-reus/">Localização de Devedores e Réus</a></li>
+                <li><a href="https://sacapinformacao.github.io/Veiculos/">Análise de Veículos</a></li>
+                <li><a href="https://sacapinformacao.github.io/Compliance/">Compliance e LGPD</a></li>
             </ul>
         </div>
         <div class="footer-column">
